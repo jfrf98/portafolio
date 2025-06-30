@@ -1,2 +1,2 @@
 # Sprint7
-Proyecto del Sprint 7 limpio
+Este es un Ejercicio de como hacer una prueba de deploy desde la plataforma Streamlit
