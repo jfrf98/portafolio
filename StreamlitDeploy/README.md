@@ -1,2 +1,4 @@
-# Sprint7
-Este es un Ejercicio de como hacer una prueba de deploy desde la plataforma Streamlit
+# Streamlit Deploy
+
+## Ejercicio de Deploy en la plataforma de Streamlit
+Ejercicio de App basica para obtener informacion de los vehiculos, tomando como base de datos los archivos del repositorio.
