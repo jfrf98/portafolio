@@ -1,4 +1,4 @@
-# 👋 Hi, I'm José Francisco Rodríguez
+# 👋 Hi, I'm Francisco Rodríguez
 
 🎯 Data Scientist | Machine Learning | Business-Driven Analytics  
 
