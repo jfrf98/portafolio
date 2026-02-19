@@ -1,1 +1,182 @@
+🚕 *Sweet Lift Taxi – Hourly Demand Forecasting*
+📌 Project Overview
 
+Sweet Lift Taxi has collected historical data on airport taxi orders.
+To optimize driver allocation during peak hours, the company needs to predict the number of taxi orders for the next hour.
+
+The objective of this project is to build a time series forecasting model that predicts hourly taxi demand while achieving a Root Mean Squared Error (RMSE) ≤ 48 on the test set.
+
+🎯 Business Objective
+
+Accurate short-term demand prediction enables:
+
+Better driver allocation during peak hours
+
+Reduced passenger wait time
+
+Improved operational efficiency
+
+Data-driven workforce planning
+
+📊 Dataset Description
+
+File: /datasets/taxi.csv
+
+Target variable:
+
+num_orders → Number of taxi orders
+
+The data contains historical timestamps and order counts.
+
+🧠 Methodology
+1️⃣ Data Preprocessing
+
+Converted timestamp to datetime format
+
+Resampled data into hourly intervals
+
+Sorted chronologically
+
+Verified missing values and temporal consistency
+
+df = df.resample('1H').sum()
+
+2️⃣ Exploratory Data Analysis (EDA)
+
+Time series visualization
+
+Trend and seasonality analysis
+
+Rolling mean and rolling standard deviation
+
+Seasonal decomposition
+
+Stationarity analysis
+
+Insights:
+
+Strong daily seasonality pattern
+
+Clear demand peaks during specific hours
+
+Trend component indicating variation over time
+
+3️⃣ Feature Engineering
+
+To convert the time series into a supervised learning problem:
+
+Lag features (previous hours demand)
+
+Rolling statistics
+
+Hour of day
+
+Day of week
+
+Example:
+
+df['lag_1'] = df['num_orders'].shift(1)
+df['rolling_mean'] = df['num_orders'].rolling(24).mean()
+
+4️⃣ Train/Test Split
+
+Last 10% of the dataset used as test set
+
+Chronological split (no random shuffling)
+
+5️⃣ Models Trained
+
+Multiple models were evaluated with hyperparameter tuning:
+
+Linear Regression
+
+Random Forest Regressor
+
+Gradient Boosting
+
+(Optional) CatBoost / XGBoost
+
+Cross-validation performed using time-series aware strategy.
+
+📈 Evaluation Metric
+
+Metric used: Root Mean Squared Error (RMSE)
+
+Project constraint:
+
+RMSE on test set must be ≤ 48
+
+🏆 Results
+Model	RMSE (Test)
+Linear Regression	XX
+Random Forest	XX
+Gradient Boosting	XX
+Best Model	XX
+
+✔ Final model achieved RMSE ≤ 48.
+
+🛠 Tech Stack
+
+Python
+
+Pandas
+
+NumPy
+
+Matplotlib / Seaborn
+
+Scikit-learn
+
+Time Series Feature Engineering
+
+📂 Project Structure
+├── notebook.ipynb
+├── README.md
+├── datasets/
+│   └── taxi.csv
+
+🚀 How to Run
+
+Clone the repository
+
+Install dependencies
+
+Run the notebook
+
+pip install pandas numpy scikit-learn matplotlib seaborn
+
+📚 Key Learnings
+
+Importance of time-based splitting
+
+Feature engineering in time series
+
+Handling seasonality patterns
+
+Avoiding data leakage in forecasting problems
+
+Comparing classical ML vs statistical approaches
+
+🔎 Future Improvements
+
+Try SARIMA / ARIMA
+
+Add external features (weather, events)
+
+Use LSTM for deep learning forecasting
+
+Perform hyperparameter optimization with GridSearchCV
+
+🎯 Why This Project Matters
+
+This project demonstrates:
+
+Business-driven modeling
+
+Time series forecasting
+
+Feature engineering
+
+Model evaluation discipline
+
+Performance optimization under constraints
